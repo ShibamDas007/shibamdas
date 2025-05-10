@@ -2,57 +2,11 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import { useState, useEffect } from "react";
+import repos from "../data/github";
 
 export default function Container() {
   const [MobileEmblaRef, MobileEmblaApi] = useEmblaCarousel({ loop: true });
   const [PcEmblaRef, PcEmblaApi] = useEmblaCarousel({ loop: true });
-  const [repos, setRepos] = useState([]);
-
-  useEffect(() => {
-    const username = "ShibamDas007";
-    const cacheKey = "githubData";
-    const cached = localStorage.getItem(cacheKey);
-    const oneDay = 24 * 60 * 60 * 1000;
-    const GITHUB_TOKEN = process.env.GITHUB_API_TOKEN;
-
-    if (cached) {
-      const parsed = JSON.parse(cached);
-      const isFresh = Date.now() - parsed.timestamp < oneDay;
-      if (isFresh) {
-        setRepos(parsed.repos);
-        return;
-      }
-    }
-
-    fetch(`https://api.github.com/users/${username}/repos`, {
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const repoPromises = data.map((repo) =>
-          fetch(`https://api.github.com/repos/${username}/${repo.name}/commits`)
-            .then((res) => res.json())
-            .then((commits) => ({
-              name: repo.name,
-              description: repo.description || "No description provided",
-              commits: Array.isArray(commits) ? commits.length : 0,
-            }))
-        );
-
-        Promise.all(repoPromises).then((fetchedRepos) => {
-          setRepos(fetchedRepos);
-          localStorage.setItem(
-            cacheKey,
-            JSON.stringify({
-              repos: fetchedRepos,
-              timestamp: Date.now(),
-            })
-          );
-        });
-      });
-  }, []);
 
   useEffect(() => {
     if (!MobileEmblaApi) return;
@@ -67,54 +21,34 @@ export default function Container() {
   }, [PcEmblaApi]);
 
   const renderProjectCards = () =>
-    repos.length > 0
-      ? repos.map((project, i) => (
-          <div key={i} className="min-w-full px-2 cursor-pointer select-none">
-            <div className="flex flex-col justify-between gap-2 bg-[#0D1117] border-2 border-[#17212C] rounded-lg w-full p-6 shadow-lg h-60">
-              <div className="flex justify-between">
-                <p className="text-yellow-600">{project.name}</p>
-                <p className="text-gray-600">Commits {project.commits}</p>
-              </div>
-              <div className="text-sm bg-[#0A0D12] p-2 text-gray-500 border border-[#080B10] shadow-lg rounded-lg text-sm overflow-y-auto">
-                <p>{'/**'}</p>
-                <p>&nbsp;{'*'} {project.description}</p>
-                <p>{'*/'}</p>
-              </div>
-              <div
-                className="bg-yellow-500 rounded-[2px]"
-                onClick={() =>
-                  window.open(
-                    `${`https://github.com/ShibamDas007/${project.name}`}`,
-                    "_blank"
-                  )
-                }
-              >
-                {"see the project"}
-              </div>
-            </div>
+    repos.map((project, i) => (
+      <div key={i} className="min-w-full px-2 cursor-pointer select-none">
+        <div className="flex flex-col justify-between gap-2 bg-[#0D1117] border-2 border-[#17212C] rounded-lg w-full p-6 shadow-lg h-60">
+          <div className="flex justify-between">
+            <p className="text-yellow-600">{project.name}</p>
+            <p className="text-gray-600">Commits {project.commits}</p>
           </div>
-        ))
-      : [1, 2, 3].map((project, i) => (
-          <div key={i} className="min-w-full px-2 cursor-pointer select-none">
-            <div className="flex flex-col gap-2 bg-[#0D1117] border-2 border-[#17212C] rounded-lg w-full p-6 shadow-lg h-full">
-              <div className="flex justify-between">
-                <p className="text-yellow-600">Project {project}</p>
-                <p className="text-gray-600">Commits {project * 2}</p>
-              </div>
-              <div className="text-sm bg-[#0A0D12] p-2 text-gray-500 border border-[#080B10] shadow-lg rounded-lg">
-                <p>{"/**"}</p>
-                <p>&nbsp;{"* React NodeJs SQL"}</p>
-                <p>&nbsp;{"* Auth API"}</p>
-                <p>&nbsp;{"* JWT + Session"}</p>
-                <p>&nbsp;{"* Sequelize ORM"}</p>
-                <p>{"**/"}</p>
-              </div>
-              <div className="bg-yellow-500 rounded-[2px] text-gray-600">
-                {"see the project"}
-              </div>
-            </div>
+          <div className="text-sm bg-[#0A0D12] p-2 text-gray-500 border border-[#080B10] shadow-lg rounded-lg text-sm overflow-y-auto">
+            <p>{"/**"}</p>
+            <p>
+              &nbsp;{"*"} {project.description}
+            </p>
+            <p>{"*/"}</p>
           </div>
-        ));
+          <div
+            className="bg-yellow-500 rounded-[2px]"
+            onClick={() =>
+              window.open(
+                `${`https://github.com/ShibamDas007/${project.name}`}`,
+                "_blank"
+              )
+            }
+          >
+            {"see the project"}
+          </div>
+        </div>
+      </div>
+    ));
 
   return (
     <div className="flex justify-center items-center w-full h-full px-10 md:p-10">

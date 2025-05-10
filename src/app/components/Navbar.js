@@ -1,10 +1,25 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const [navbar, setNavbar] = useState("_hello");
+  const pathname = usePathname();
+  
+  // Map paths to nav item names
+  const pathToName = {
+    "/": "_hello",
+    "/about": "_about_me",
+    "/projects": "_projects",
+  };
+
+  // Initialize navbar state based on current path
+  const [navbar, setNavbar] = useState(pathToName[pathname] || "_hello");
+  
+  // Update navbar state when pathname changes
+  useEffect(() => {
+    setNavbar(pathToName[pathname] || "_hello");
+  }, [pathname]);
 
   const selectedNav = (option) => {
     setNavbar(option);
