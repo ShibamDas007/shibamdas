@@ -1,8 +1,8 @@
 import Header from "../components/Header";
-import About from "../components/about";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import File from "../components/fileShower";
+import _about from "../components/aboutsection";
 
 export const metadata = {
   title: "About me | Shibam Das",
@@ -18,7 +18,7 @@ export default function Page() {
           <div className="flex flex-col w-full min-h-0">
             <Navbar />
             <div className="flex-grow">
-              <About />
+              <_about/>
             </div>
           </div>
           <div className="flex-shrink-0 w-60 bg-[#010409]"><File/></div>
@@ -30,8 +30,8 @@ export default function Page() {
       <div className="md:hidden flex flex-col bg-[#0D1117] w-screen md:h-screen overflow-hidden h-dvh overflow-y-auto">
         <Header />
         <Navbar />
-        <div className="h-full">
-          <About />
+        <div className="h-full overflow-y-auto flex justify-center items-center">
+          <_about />
         </div>
         <Footer />
       </div>
