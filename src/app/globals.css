@@ -38,3 +38,19 @@ body {
 .animate-blinkUnderline {
   animation: blinkUnderline 1s infinite;
 }
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+  background-color: #0D1117;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #636361;
+  border-radius: 10px;
+}

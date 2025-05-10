@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.10.5",
     "next": "15.3.2",
     "prism-react-renderer": "^2.4.1",
     "prismjs": "^1.30.0",

@@ -42,9 +42,9 @@ export default function Navbar() {
             <Link
               key={item.path}
               href={item.path}
-              className={`p-2 md:px-12 px-6 cursor-pointer ${
+              className={`p-2 md:px-12 px-6 cursor-pointer transition-all duration-500 ease ${
                 navbar === `${item.name}`
-                  ? "bg-[#0D1117] border-r border-t border-gray-600 text-orange-300"
+                  ? "bg-[#0D1117] border-r border-t border-gray-600 text-orange-300 shadow-lg"
                   : "border-r border-t border-b border-gray-600"
               } `}
               onClick={() => {
