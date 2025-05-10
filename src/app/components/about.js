@@ -1,8 +1,3 @@
-/**
- * ABOUT ME
- * A brief introduction to who I am
- */
-
 const aboutMe = {
   name: "Shibam Das",
   role: "Full Stack Developer",
@@ -30,13 +25,13 @@ export default function About() {
         <div className="flex flex-col gap-[10px]">
           <span className="text-yellow-600">aboutMe <span className="text-white">=</span> {"{"}</span>
           <div>
-            name: <span>"Shibam Das",</span>
+            {'name:'} <span>{'"Shibam Das",'}</span>
           </div>
           <div>
-            role: <span>"Full Stack Developer",</span>
+            {'role:'} <span>{'"Full Stack Developer",'}</span>
           </div>
           <div>
-            technologies:
+            {'technologies:'}
             <span>
               {' ["'}
               {aboutMe.technologies.map((tech, index) => (
@@ -46,13 +41,13 @@ export default function About() {
             </span>
           </div>
           <div className="flex gap-2">
-            experience: <p>{'"😐",'}</p>
+            {'experience:'} <p>{'"😐",'}</p>
           </div>
           <div className="flex gap-2">
-            education: <p>{'"Bachelor of Computer Science",'}</p>
+            {'education:'} <p>{'"Bachelor of Computer Science",'}</p>
           </div>
           <div>
-            interests:
+            {'interests:'}
             <span>
               {' ["'}
               {aboutMe.interests.map((tech, index) => (
@@ -62,7 +57,7 @@ export default function About() {
             </span>
           </div>
           <div className="">
-            contactInfo: {"{"}
+            {'contactInfo:'} {"{"}
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'email: "example123@gmail.com",'}</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'github: "github.com/shibam-das",'}</p>
           </div>
