@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 
 export default function Projects() {
   return (
-    <div className="flex flex-col w-screen h-screen">
+    <div className="flex flex-col w-screen md:h-screen h-dvh">
       <Header />
       <div className="flex flex-grow min-h-0">
         <div className="flex flex-col w-full min-h-0">

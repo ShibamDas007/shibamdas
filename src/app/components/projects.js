@@ -8,7 +8,7 @@ export default function _project() {
       {repos.map((project, _) => (
         <div
           key={project.id}
-          className="w-100 md:w-140 px-6 sm:p-0 lg:w-120 xl:w-140 h-full px-2 cursor-pointer select-none flex flex-col gap-2"
+          className="w-90 md:w-140 px-6 sm:p-0 lg:w-120 xl:w-140 h-full px-2 cursor-pointer select-none flex flex-col gap-2"
         >
           <div className="flex flex-col justify-between gap-2 bg-[#0D1117] border-2 border-[#17212C] rounded-lg w-full p-6 shadow-lg h-60 transition-all duration-300 hover:scale-[1.02] hover:border-sky-500 hover:shadow-sky-700/50 active:scale-[1.02] active:border-sky-500 active:shadow-sky-700/50">
             <div className="flex justify-between">
