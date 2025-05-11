@@ -24,38 +24,38 @@ export default function File() {
         <span className="text-xs">MY INTERESTS</span>
       </div>
       <div className={`ml-2 overflow-hidden ${file1 ? "max-h-[500px]" : "max-h-0"} transition-all ease duration-500`}>
-        <div onClick={() => setFile2(!file2)} className="flex select-none cursor-pointer text-sm items-center">
+        <div onClick={() => setFile2(!file2)} className="flex select-none cursor-pointer text-sm items-center hover:bg-gray-700 active:bg-gray-500">
             <p className={`px-4 transform transition-transform duration-200 ${file2 ? "rotate-90" : ""}`}>&gt;</p>
             <span className="text-xs flex gap-2 items-center"><DiReact size={16} color="aqua"/><span>ReactJS</span></span>
         </div>
-        <div onClick={() => setFile3(!file3)} className="flex select-none cursor-pointer text-sm items-center">
+        <div onClick={() => setFile3(!file3)} className="flex select-none cursor-pointer text-sm items-center hover:bg-gray-700 active:bg-gray-500">
             <p className={`px-4 transform transition-transform duration-200 ${file3 ? "rotate-90" : ""}`}>&gt;</p>
             <span className="text-xs flex gap-2"><SiNextdotjs size={16}/><span>NextJS</span></span>
         </div>
-        <div onClick={() => setFile4(!file4)} className="flex select-none cursor-pointer text-sm items-center">
+        <div onClick={() => setFile4(!file4)} className="flex select-none cursor-pointer text-sm items-center hover:bg-gray-700 active:bg-gray-500">
             <p className={`px-4 transform transition-transform duration-200 ${file4 ? "rotate-90" : ""}`}>&gt;</p>
             <span className="text-xs flex gap-2 items-center"><DiNodejs size={20} color="green"/><span>NodeJS</span></span>
         </div>
-        <div onClick={() => setFile5(!file5)} className="flex select-none cursor-pointer text-sm items-center">
+        <div onClick={() => setFile5(!file5)} className="flex select-none cursor-pointer text-sm items-center hover:bg-gray-700 active:bg-gray-500">
             <p className={`px-4 transform transition-transform duration-200 ${file5 ? "rotate-90" : ""}`}>&gt;</p>
             <span className="text-xs flex gap-2 items-center"><SiExpress size={14}/><span>Express</span></span>
         </div>
-        <div onClick={() => setFile6(!file6)} className="flex select-none cursor-pointer text-sm items-center">
+        <div onClick={() => setFile6(!file6)} className="flex select-none cursor-pointer text-sm items-center hover:bg-gray-700 active:bg-gray-500">
             <p className={`px-4 transform transition-transform duration-200 ${file6 ? "rotate-90" : ""}`}>&gt;</p>
             <span className="text-xs gap-2 flex"><DiPython size={16}/><span>Python</span></span>
         </div>
-        <div onClick={() => setFile(!file)} className="flex select-none cursor-pointer text-sm items-center">
+        <div onClick={() => setFile(!file)} className="flex select-none cursor-pointer text-sm items-center hover:bg-gray-700 active:bg-gray-500">
             <p className={`px-4 transform transition-transform duration-200 ${file ? "rotate-90" : ""}`}>&gt;</p>
             <span className="text-xs">⛱️ Free time</span>
         </div>
         <div className={`text-xs ml-8 flex flex-col gap-2 overflow-hidden transition-all ease duration-500 ${file ? "max-h-[500px]" : "max-h-0"}`}>
-            <p className="flex gap-2"><VscMarkdown size={16} color="FFEF00"/><span>Playing_minceraft.md</span></p>
-            <p className="flex gap-2"><VscMarkdown size={16} color="FFEF00"/><span>Playing_chess.md</span></p>
-            <p className="flex gap-2"><VscMarkdown size={16} color="FFEF00"/><span>Scrolling_Insta.md</span></p>
-            <p className="flex gap-2"><VscMarkdown size={16} color="FFEF00"/><span>Reading_books.md</span></p>
-            <p className="flex gap-2"><VscMarkdown size={16} color="FFEF00"/><span>Quantum_Physics_Study.md</span></p>
-            <p className="flex gap-2"><VscMarkdown size={16} color="FFEF00"/><span>AI_Research.md</span></p>
-            <p className="flex gap-2"><VscMarkdown size={16} color="FFEF00"/><span>Tech_Articles.md</span> </p>
+            <p className="flex gap-2 cursor-pointer active:bg-gray-700 hover:bg-gray-500"><VscMarkdown size={16} color="FFEF00"/><span>Playing_minceraft.md</span></p>
+            <p className="flex gap-2 cursor-pointer active:bg-gray-700 hover:bg-gray-500"><VscMarkdown size={16} color="FFEF00"/><span>Playing_chess.md</span></p>
+            <p className="flex gap-2 cursor-pointer active:bg-gray-700 hover:bg-gray-500"><VscMarkdown size={16} color="FFEF00"/><span>Scrolling_Insta.md</span></p>
+            <p className="flex gap-2 cursor-pointer active:bg-gray-700 hover:bg-gray-500"><VscMarkdown size={16} color="FFEF00"/><span>Reading_books.md</span></p>
+            <p className="flex gap-2 cursor-pointer active:bg-gray-700 hover:bg-gray-500"><VscMarkdown size={16} color="FFEF00"/><span>Quantum_Physics_Study.md</span></p>
+            <p className="flex gap-2 cursor-pointer active:bg-gray-700 hover:bg-gray-500"><VscMarkdown size={16} color="FFEF00"/><span>AI_Research.md</span></p>
+            <p className="flex gap-2 cursor-pointer active:bg-gray-700 hover:bg-gray-500"><VscMarkdown size={16} color="FFEF00"/><span>Tech_Articles.md</span> </p>
         </div>
       </div>
     </div>
