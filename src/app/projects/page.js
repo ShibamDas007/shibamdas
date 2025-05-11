@@ -4,6 +4,11 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 
+export const metadata = {
+  title: "Projects | Shibam Das",
+  description: "Projects, Shibam Das - Full Stack Developer",
+};
+
 export default function Projects() {
   return (
     <div className="flex flex-col w-screen md:h-screen h-dvh">

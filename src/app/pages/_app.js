@@ -3,6 +3,10 @@ import Container from "../components/Container";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+export const metadata = {
+  title: "Home | Shibam Das",
+  description: "Home Shibam Das - Full Stack Developer",
+};
 
 function App() {
   return (
